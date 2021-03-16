@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.dao.seatDao">
+    <select id="query101a" resultType="com.cy.bean.seat">
+        select seatid from first where realid=#{realid}
+    </select>
+    <select id="query101b" resultType="com.cy.bean.seat">
+        select seatid from first1b where realid=#{realid}
+    </select>
+    <select id="query107a" resultType="com.cy.bean.seat">
+        select seatid from first107a where realid=#{realid}
+    </select>
+    <select id="query107b" resultType="com.cy.bean.seat">
+        select seatid from first107b where realid=#{realid}
+    </select>
+    <select id="querysecond" resultType="com.cy.bean.seat">
+        select seatid from second where realid=#{realid}
+    </select>
+    <select id="querythird" resultType="com.cy.bean.seat">
+        select seatid from third where realid=#{realid}
+    </select>
+    <select id="queryfourth" resultType="com.cy.bean.seat">
+        select seatid from fourth where realid=#{realid}
+    </select>
+    <select id="queryfifth" resultType="com.cy.bean.seat">
+        select seatid from fifth where realid=#{realid}
+    </select>
+
+    <select id="query101abyid" resultType="com.cy.bean.seat">
+        select seatid from first where id=#{id}
+    </select>
+    <select id="query101bbyid" resultType="com.cy.bean.seat">
+        select seatid from first1b where id=#{id}
+    </select>
+    <select id="query107abyid" resultType="com.cy.bean.seat">
+        select seatid from first107a where id=#{id}
+    </select>
+    <select id="query107bbyid" resultType="com.cy.bean.seat">
+        select seatid from first107b where id=#{id}
+    </select>
+    <select id="querysecondbyid" resultType="com.cy.bean.seat">
+        select seatid from second where id=#{id}
+    </select>
+    <select id="querythirdbyid" resultType="com.cy.bean.seat">
+        select seatid from third where id=#{id}
+    </select>
+    <select id="queryfourthbyid" resultType="com.cy.bean.seat">
+        select seatid from fourth where id=#{id}
+    </select>
+    <select id="queryfifthbyid" resultType="com.cy.bean.seat">
+        select seatid from fifth where id=#{id}
+    </select>
+
+</mapper>

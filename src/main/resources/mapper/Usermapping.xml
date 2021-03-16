@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.dao.UserDao">
+    
+    <select id="getByMessage" resultType="com.cy.bean.User">
+        select * from easyUser where username = #{username} and userpassword = #{userpassword}
+    </select>
+
+
+    <select id="getalluser" resultType="com.cy.bean.User">
+        select * from easyUser
+        <if test="username!=null">
+            where username like #{username}
+        </if>
+        limit #{pageStart},#{pageSize}
+    </select>
+    <select id="getuserbyname" resultType="com.cy.bean.User">
+        select * from easyUser where username=#{username}
+    </select>
+    <select id="getusercounts" resultType="java.lang.Integer">
+        select count(*) from easyUser
+        <if test="username!=null">
+            where username like #{username}
+        </if>
+    </select>
+    <update id="upedatestate">
+        update easyUser set state = #{state} where id = #{id}
+    </update>
+    <update id="updateinfo1">
+        update easyUser set email = #{email},role=#{role} where username = #{username}
+    </update>
+    <insert id="adduser" >
+        insert easyUser (username,userpassword,email,role,state) values (#{username},
+        #{userpassword},#{email},#{role},#{state});
+    </insert>
+    <delete id="deluser">
+        delete from easyUser where id =#{id};
+    </delete>
+    <select id="getupdateUser" resultType="com.cy.bean.User">
+        select * from easyUser where id = #{id};
+    </select>
+    <update id="edituser">
+        update easyUser set username = #{username},userpassword = #{userpassword},
+        email =#{email} where id = #{id};
+    </update>
+</mapper>
+    <!--配置查询所有-->
